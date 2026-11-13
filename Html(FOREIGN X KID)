@@ -1,0 +1,52 @@
+        </div>
+        <form class="chat-input-area" id="chatForm">
+          <input type="text" id="chatInput" placeholder="Write a message..." required>
+          <button type="submit">Send</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Sample Short Videos List
+    const videos = [
+      {
+        title: "Cool Cat Vibes #1",
+        url: "https://mixkit.co"
+      },
+      {
+        title: "Happy Doggo Zoomies #2",
+        url: "https://mixkit.co"
+      },
+      {
+        title: "Silly Llama Stare #3",
+        url: "https://mixkit.co"
+      }
+    ];
+
+    let currentVideoIndex = 0;
+    let currentUser = "";
+
+    // DOM Elements
+    const loginScreen = document.getElementById("loginScreen");
+    const appScreen = document.getElementById("appScreen");
+    const loginForm = document.getElementById("loginForm");
+    const logoutBtn = document.getElementById("logoutBtn");
+    const displayUser = document.getElementById("displayUser");
+
+    const videoPlayer = document.getElementById("videoPlayer");
+    const videoTitle = document.getElementById("videoTitle");
+    const nextVideoBtn = document.getElementById("nextVideoBtn");
+
+    const chatForm = document.getElementById("chatForm");
+    const chatInput = document.getElementById("chatInput");
+    const chatMessages = document.getElementById("chatMessages");
+
+    // Handle Login
+    loginForm.addEventListener("submit", function(e) {
+      e.preventDefault();
+      const usernameInput = document.getElementById("username").value.trim();
+      if (usernameInput) {
+        currentUser = usernameInput;
+        displayUser.textContent = currentUser;
+        loginScreen.style.display = "none";
